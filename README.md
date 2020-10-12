@@ -153,10 +153,9 @@ Alright, Let's start making our Android App. We will first make a new project. F
 Unfortunately, there is no official Android SDK for Wit.ai but they do have a **[HTTP API](https://wit.ai/docs/http/)** which we can access with **[Retrofit](https://square.github.io/retrofit/)**.
 
 To use Retrofit in our app we need to add the following dependencies to our **app-level build.gradle** file. 
-``` 
+```Gradle
 // use the latest version
 implementation "com.squareup.retrofit2:retrofit:2.9.0"
-
 ```
 Remember to click on **Sync Now** button after you make changes to your gradle file.
 
@@ -166,7 +165,7 @@ Remember to click on **Sync Now** button after you make changes to your gradle f
 **Retrofit** uses **OkHttp** to make Http Requests which requires us to [target Java 8](https://square.github.io/okhttp/upgrading_to_okhttp_4/#gradle).
 So to make sure everything works properly, just add the following lines to the **app-level build.gradle** file (same file as above).
 
-```
+```Gradle
 android {
     // truncated
 
@@ -189,7 +188,7 @@ dependencies {
 
 ### Add Permissions to Manifest
 Our app needs the following permissions so add them to your **AndroidManifest.xml** 
-```
+```XML
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 ```
@@ -206,7 +205,7 @@ To do this,  we will define two functions **checkPermissions()** and **requestPe
 
 You should check for permissions in **onCreate** every time the app runs and if they are not granted or revoked, you must ask for them.
 
-```
+```Kotlin
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
      	/* truncated code */
@@ -252,7 +251,7 @@ Go to **activity_main.xml** and delete everything inside it. You can find it her
 ![](media/img/main_layout_path.png)
 
 Copy the code below and paste it inside your **activity_main.xml** file.
-``` xml
+```XML
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -345,7 +344,7 @@ Then with **Retrofit Builder**,  we will create an object of the interface and u
 
 Don't forget to initialize **CLIENT_ACCESS_TOKEN**  with the client access token you got earlier.
 
-```
+```Kotlin
 class MainActivity : AppCompatActivity() {
 
     companion object {
@@ -400,7 +399,7 @@ As it is common to both, I will first show you how to handle it and then how to 
 
 #### Response Format
 When you make an API call. You will get a response similar to this. 
-```
+```JSON
 {
    "text":"6 x 10",
    "intents":[
@@ -464,7 +463,7 @@ Now when we get a valid repsonse (in **onResponse**), we will get **most confide
 
 If we get an error, we will just log it.
 
-```
+```Kotlin
 class MainActivity : AppCompatActivity(), Callback<ResponseBody> {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -538,7 +537,7 @@ Working with text messages is very simple.
 
 Whenever **sendTextMessageButton** is pressed, we will get the text from **textMessageInput** and make an API call (Here we are making an asynchronous call with enqueue). 
 
-```
+```Kotlin
 class MainActivity : AppCompatActivity(), Callback<ResponseBody> {
 
     /* truncated code */
@@ -571,7 +570,7 @@ Here, I will only show you how to stream raw audio as we need realtime input.
 
 We will use [AudioRecord](https://developer.android.com/reference/android/media/AudioRecord) to read the audio from the mic and write it to [RequestBody](https://square.github.io/okhttp/3.x/okhttp/okhttp3/RequestBody.html) on a background thread
 
-```
+```Kotlin
 class MainActivity : AppCompatActivity(), Callback<ResponseBody> {
 
     companion object {
@@ -645,4 +644,4 @@ We have now completed this project. I hope you now have a working knowledge abou
 
 Before you go, I would like to suggest you read the [recepies](https://wit.ai/docs/recipes) on the Wit.ai to get to know more about Wit's capabilities and also to check out the [sample android project](https://github.com/wit-ai/android-voice-demo) given by the Wit.ai team on which this tutorial was based.
 ## Source Code 
-**Android Project:** You can find the complete project [here](). I have added more comments to it so do have a look if you are having trouble understanding the code.
+**Android Project:** You can find the complete project [here](https://github.com/yashx/WitCalculator). I have added more comments to it so do have a look if you are having trouble understanding the code.
