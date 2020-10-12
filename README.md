@@ -147,7 +147,7 @@ Alright, Let's start making our Android App. We will first make a new project. F
 7. Choose **API 21** as the minimum SDK 
 8. Click **Finish** Button
 
-![](file:///home/yash/Desktop/media/gif/android_create_project.gif)
+![](media/gif/android_create_project.gif)
 
 ### Add Dependencies 
 Unfortunately, there is no official Android SDK for Wit.ai but they do have a **[HTTP API](https://wit.ai/docs/http/)** which we can access with **[Retrofit](https://square.github.io/retrofit/)**.
