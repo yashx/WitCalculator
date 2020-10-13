@@ -31,7 +31,7 @@ We will start by first creating a Wit.ai App. To do this
 
 ![](media/gif/wit_create.gif)
 
-### Intents
+### Add Intents
 #### What is an Intent?
 **Intent** represents the intention of the message. It is the action that the user wants to perform.
 
@@ -47,7 +47,7 @@ There are multiple ways you express this
 
 But the intent remains the same. 
 
-#### Create Intents
+#### How to add Intents?
 As we are building a calculator, there are 4 intents (or actions) we will support.
 1. **add_num** : To add 2 numbers
 2. **sub_num** : To subtract 2 numbers
@@ -62,7 +62,7 @@ Follow these steps for all Intents to add them to your Wit.ai Application
 
 ![](media/gif/wit_intent_create.gif)
 
-### Entites
+### Add Entites
 #### What is an Entity?
 **Entity** represents the data provided in the message. It is the data the user wants the action to be performed on.
 
@@ -74,7 +74,7 @@ To make development easier, Wit.ai provides many **[built-in entities](https://w
 
 Remember whenever it's possible, use the **built-in entities** over your own **custom entities** to get better results.
 
-#### Add Entity
+#### How to add Entities?
 For our calculator, we can use **[wit/number](https://wit.ai/docs/built-in-entities/#wit_number)** 
 
 Follow these steps to add an entity
