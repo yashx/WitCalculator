@@ -3,6 +3,9 @@
 In this article, I will explain the basics of Wit.ai while walking you through the steps needed to set up a Wit.ai app and also show you how to integrate it with an Android App.
 
 As building a project is one of the best ways to learn something new, we will make a simple conversational calculator which works with both text and audio inputs.
+(Click the image below to see the finished app)
+
+[![](http://img.youtube.com/vi/pHQbD0q7Aqg/0.jpg)](http://www.youtube.com/watch?v=pHQbD0q7Aqg)
 
 Let's Start.
 
